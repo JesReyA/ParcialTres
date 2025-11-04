@@ -39,6 +39,7 @@ public class ArbolBinarioArreglo<E>{
             }
     }
 
+    //recorridos
     public void inorder(){
 
     }

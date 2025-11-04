@@ -5,7 +5,7 @@ import unam.fes.aragon.dinamicas.pilas.Pila;
 
 public class InterfijaAPostfija {
     private String cadenaPostfija;
-    Pila<ArbolBinarioOrden<Integer>> subarboles= new Pila<>();
+    Pila<ArbolBinarioOrden<Character>> subarboles= new Pila<>();
 
     public InterfijaAPostfija(String cadenaPostfija) {
         this.cadenaPostfija = cadenaPostfija;
@@ -38,5 +38,11 @@ public class InterfijaAPostfija {
 
         }
     }
+
+//    private ArbolBinarioOrden<Character> crearSubarbol(Character caracter){
+//        ArbolBinarioOrden<Character> subarbol = new ArbolBinarioOrden<>();
+//
+//        return
+//    }
 
 }
