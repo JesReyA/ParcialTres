@@ -39,6 +39,10 @@ public class ArbolBinarioArreglo<E>{
             }
     }
 
+    public void inorder(){
+
+    }
+
     public void imprimir(){
         arbolBinario.imprimirLista();
     }
