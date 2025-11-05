@@ -31,40 +31,40 @@ public class InterfijaAPostfija {
             Character caracterALeer = cadenaCaracteres[i];
             NodoCaracteres<Character> nodoActual= new NodoCaracteres<>(caracterALeer, "");
 
-           switch (caracterALeer){
+            switch (caracterALeer){
 
-               case '+':
+                case '+':
                     operandoDerecho = nodos.extraer();
                     operandoIzquierdo = nodos.extraer() ;
                     subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
                     nodos.insertar(subarbolTemporal);
-                   break;
-               case '-':
-                   operandoDerecho = nodos.extraer();
-                   operandoIzquierdo = nodos.extraer() ;
-                   subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
-                   nodos.insertar(subarbolTemporal);
-                   break;
+                    break;
+                case '-':
+                    operandoDerecho = nodos.extraer();
+                    operandoIzquierdo = nodos.extraer() ;
+                    subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                    nodos.insertar(subarbolTemporal);
+                    break;
 
-               case '*':
-                   operandoDerecho = nodos.extraer();
-                   operandoIzquierdo = nodos.extraer() ;
-                   subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
-                   nodos.insertar(subarbolTemporal);
-                   break;
+                case '*':
+                    operandoDerecho = nodos.extraer();
+                    operandoIzquierdo = nodos.extraer() ;
+                    subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                    nodos.insertar(subarbolTemporal);
+                    break;
 
-               case '/':
-                   operandoDerecho = nodos.extraer();
-                   operandoIzquierdo = nodos.extraer() ;
-                   subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
-                   nodos.insertar(subarbolTemporal);
-                   break;
+                case '/':
+                    operandoDerecho = nodos.extraer();
+                    operandoIzquierdo = nodos.extraer() ;
+                    subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                    nodos.insertar(subarbolTemporal);
+                    break;
 
-               default:
-                   NodoCaracteres<Character> nodoTemporal = new NodoCaracteres<>(caracterALeer, "");
-                   nodos.insertar(nodoTemporal);
-                   break;
-           }
+                default:
+                    NodoCaracteres<Character> nodoTemporal = new NodoCaracteres<>(caracterALeer, "");
+                    nodos.insertar(nodoTemporal);
+                    break;
+            }
 
         }
     }
