@@ -5,8 +5,8 @@ import unam.fes.aragon.dinamicas.pilas.Pila;
 
 public class InterfijaAPostfija {
     private String cadenaPostfija;
-    Pila<ArbolBinarioOrden<Character>> subarboles = new Pila<>();
-
+   // Pila<ArbolBinarioOperadores<Character>> subarboles = new Pila<>();
+    Pila<NodoCaracteres<Character>> nodos = new Pila<>();
     public InterfijaAPostfija(String cadenaPostfija) {
         this.cadenaPostfija = cadenaPostfija;
     }
@@ -21,34 +21,59 @@ public class InterfijaAPostfija {
 
     public void interfijaAPostfija(){
         char [] cadenaCaracteres = cadenaPostfija.toCharArray();
-        System.out.println(cadenaPostfija.length());
+
+        NodoCaracteres<Character> operandoDerecho;
+        NodoCaracteres<Character> operandoIzquierdo;
+        NodoCaracteres<Character> subarbolTemporal;
+
         for(int i = 0; i<= cadenaCaracteres.length -1; i++){
+
             Character caracterALeer = cadenaCaracteres[i];
-           switch (cadenaCaracteres[i]){
+            NodoCaracteres<Character> nodoActual= new NodoCaracteres<>(caracterALeer, "");
+
+           switch (caracterALeer){
+
                case '+':
+                    operandoDerecho = nodos.extraer();
+                    operandoIzquierdo = nodos.extraer() ;
+                    subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                    nodos.insertar(subarbolTemporal);
                    break;
                case '-':
+                   operandoDerecho = nodos.extraer();
+                   operandoIzquierdo = nodos.extraer() ;
+                   subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                   nodos.insertar(subarbolTemporal);
                    break;
 
                case '*':
+                   operandoDerecho = nodos.extraer();
+                   operandoIzquierdo = nodos.extraer() ;
+                   subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                   nodos.insertar(subarbolTemporal);
                    break;
 
                case '/':
+                   operandoDerecho = nodos.extraer();
+                   operandoIzquierdo = nodos.extraer() ;
+                   subarbolTemporal = crearSubarbol(nodoActual, operandoIzquierdo, operandoDerecho);
+                   nodos.insertar(subarbolTemporal);
                    break;
+
                default:
-                   ArbolBinarioOrden<Character> subarbolLocal = new ArbolBinarioOrden<>();
-                   subarbolLocal.insertar(caracterALeer);
-                   subarboles.insertar(subarbolLocal);
+                   NodoCaracteres<Character> nodoTemporal = new NodoCaracteres<>(caracterALeer, "");
+                   nodos.insertar(nodoTemporal);
                    break;
            }
 
         }
     }
+    private NodoCaracteres<Character> crearSubarbol(NodoCaracteres<Character> raiz, NodoCaracteres<Character> hijoIzquierdo, NodoCaracteres<Character> hijoDerecho){
+        raiz.derecho = hijoDerecho;
+        raiz.izquierdo = hijoIzquierdo;
+        return raiz;
+    }
 
-//    private ArbolBinarioOrden<Character> crearSubarbol(Character caracter){
-//        ArbolBinarioOrden<Character> subarbol = new ArbolBinarioOrden<>();
-//
-//        return
-//    }
+
 
 }
