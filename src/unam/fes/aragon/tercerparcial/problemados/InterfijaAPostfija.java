@@ -5,7 +5,7 @@ import unam.fes.aragon.dinamicas.pilas.Pila;
 
 public class InterfijaAPostfija {
     private String cadenaPostfija;
-    Pila<ArbolBinarioOrden<Character>> subarboles= new Pila<>();
+    Pila<ArbolBinarioOrden<Character>> subarboles = new Pila<>();
 
     public InterfijaAPostfija(String cadenaPostfija) {
         this.cadenaPostfija = cadenaPostfija;
@@ -23,6 +23,7 @@ public class InterfijaAPostfija {
         char [] cadenaCaracteres = cadenaPostfija.toCharArray();
         System.out.println(cadenaPostfija.length());
         for(int i = 0; i<= cadenaCaracteres.length -1; i++){
+            Character caracterALeer = cadenaCaracteres[i];
            switch (cadenaCaracteres[i]){
                case '+':
                    break;
@@ -33,6 +34,11 @@ public class InterfijaAPostfija {
                    break;
 
                case '/':
+                   break;
+               default:
+                   ArbolBinarioOrden<Character> subarbolLocal = new ArbolBinarioOrden<>();
+                   subarbolLocal.insertar(caracterALeer);
+                   subarboles.insertar(subarbolLocal);
                    break;
            }
 
