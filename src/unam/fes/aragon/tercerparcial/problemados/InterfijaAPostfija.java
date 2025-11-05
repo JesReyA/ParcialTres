@@ -7,7 +7,6 @@ public class InterfijaAPostfija {
     private String cadenaPostfija;
    // Pila<ArbolBinarioOperadores<Character>> subarboles = new Pila<>();
     Pila<NodoCaracteres<Character>> nodos = new Pila<>();
-
     public InterfijaAPostfija(String cadenaPostfija) {
         this.cadenaPostfija = cadenaPostfija;
     }
