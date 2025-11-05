@@ -1,6 +1,7 @@
 package unam.fes.aragon.tercerparcial.problemados;
 
 import unam.fes.aragon.dinamicas.arboles.ArbolBinarioOrden;
+import unam.fes.aragon.dinamicas.cola.Cola;
 import unam.fes.aragon.dinamicas.pilas.Pila;
 
 public class InterfijaAPostfija {
@@ -74,6 +75,31 @@ public class InterfijaAPostfija {
         return raiz;
     }
 
+//    public void imprimir(){
+//        nodos.
+//    }
+
+    public void recorridoAmplitud() throws Exception {
+        NodoCaracteres<Character> n = nodos.extraer();
+        Cola<NodoCaracteres<Character>> cola = new Cola<>();
+        if (n != null) {
+            cola.insertar(n);
+            while (!cola.estaVacia()) {
+                n = cola.extraer();
+                imprimir(n);
+                if (n.izquierdo != null) {
+                    cola.insertar(n.izquierdo);
+                }
+                if (n.derecho != null) {
+                    cola.insertar(n.derecho);
+                }
+            }
+        }
+    }
+
+    public void imprimir(NodoCaracteres<Character> n) {
+        System.out.println(n.dato + " " + n.etiqueta);
+    }
 
 
 }
