@@ -16,24 +16,6 @@ public class ArbolBinarioOperadores<E> {
         raiz = null;
     }
 
-    public void recorridoAmplitud() throws Exception {
-        NodoCaracteres<E> n = raiz;
-        Cola<NodoCaracteres<E>> cola = new Cola<>();
-        if (n != null) {
-            cola.insertar(n);
-            while (!cola.estaVacia()) {
-                n = cola.extraer();
-                imprimir(n);
-                if (n.izquierdo != null) {
-                    cola.insertar(n.izquierdo);
-                }
-                if (n.derecho != null) {
-                    cola.insertar(n.derecho);
-                }
-            }
-        }
-    }
-
     public void imprimir(NodoCaracteres<E> n) {
         System.out.println(n.dato + " " + n.etiqueta);
     }

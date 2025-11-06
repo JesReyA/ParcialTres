@@ -7,7 +7,9 @@ public class InterAposPrueba {
 
 
         try {
-            test.recorridoAmplitud();
+            //test.prefija();
+            //test.postfija();
+            test.interfija();
         }catch (Exception e){
             e.printStackTrace();
         }

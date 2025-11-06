@@ -1,13 +1,12 @@
 package unam.fes.aragon.tercerparcial.problemados;
 
-import unam.fes.aragon.dinamicas.arboles.ArbolBinarioOrden;
 import unam.fes.aragon.dinamicas.cola.Cola;
 import unam.fes.aragon.dinamicas.pilas.Pila;
 
 public class InterfijaAPostfija {
     private String cadenaPostfija;
-   // Pila<ArbolBinarioOperadores<Character>> subarboles = new Pila<>();
     Pila<NodoCaracteres<Character>> nodos = new Pila<>();
+
     public InterfijaAPostfija(String cadenaPostfija) {
         this.cadenaPostfija = cadenaPostfija;
     }
@@ -75,11 +74,7 @@ public class InterfijaAPostfija {
         return raiz;
     }
 
-//    public void imprimir(){
-//        nodos.
-//    }
-
-    public void recorridoAmplitud() throws Exception {
+    public void imprimirArbol() throws Exception {
         NodoCaracteres<Character> n = nodos.extraer();
         Cola<NodoCaracteres<Character>> cola = new Cola<>();
         if (n != null) {
@@ -94,6 +89,45 @@ public class InterfijaAPostfija {
                     cola.insertar(n.derecho);
                 }
             }
+        }
+    }
+
+    public void prefija(){
+        NodoCaracteres<Character> raiz = nodos.extraer();
+        preorden(raiz);
+    }
+
+    public void interfija(){
+        NodoCaracteres<Character> raiz = nodos.extraer();
+        orden(raiz);
+    }
+
+    public void postfija(){
+        NodoCaracteres<Character> raiz = nodos.extraer();
+        postorden(raiz);
+    }
+
+    private void preorden(NodoCaracteres<Character> n) {
+        if (n != null) {
+            imprimir(n);
+            preorden(n.izquierdo);
+            preorden(n.derecho);
+        }
+    }
+
+    private void orden(NodoCaracteres<Character> n) {
+        if (n != null) {
+            orden(n.izquierdo);
+            imprimir(n);
+            orden(n.derecho);
+        }
+    }
+
+    private void postorden(NodoCaracteres<Character> n) {
+        if (n != null) {
+            postorden(n.izquierdo);
+            postorden(n.derecho);
+            imprimir(n);
         }
     }
 
