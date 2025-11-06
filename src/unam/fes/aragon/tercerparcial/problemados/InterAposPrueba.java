@@ -2,14 +2,13 @@ package unam.fes.aragon.tercerparcial.problemados;
 
 public class InterAposPrueba {
     public static void main(String[] args) {
-        InterfijaAPostfija test = new InterfijaAPostfija("53+2*");
+        InterfijaAPostfija test = new InterfijaAPostfija("34*3+");
         test.interfijaAPostfija();
 
-
         try {
-            //test.prefija();
+            test.prefija();
             //test.postfija();
-            test.interfija();
+            //test.interfija();
         }catch (Exception e){
             e.printStackTrace();
         }

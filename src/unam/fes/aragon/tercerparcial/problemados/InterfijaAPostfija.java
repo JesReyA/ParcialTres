@@ -131,7 +131,7 @@ public class InterfijaAPostfija {
         }
     }
 
-    public void imprimir(NodoCaracteres<Character> n) {
+    private void imprimir(NodoCaracteres<Character> n) {
         System.out.println(n.dato + " " + n.etiqueta);
     }
 
