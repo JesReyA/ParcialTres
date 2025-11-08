@@ -17,7 +17,7 @@ public class InterfijaAPostfija {
 
 
 
-    public void interfijaAPostfija(){
+    public void construirArbol(){
         String [] cadenaCaracteres = cadenaPostfija.split(" ");
 
         NodoCaracteres<String> operandoDerecho;

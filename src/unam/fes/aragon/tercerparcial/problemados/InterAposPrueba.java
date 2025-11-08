@@ -5,9 +5,9 @@ public class InterAposPrueba {
     public static void main(String[] args) {
         InterfijaAPostfija test = new InterfijaAPostfija("10 5 8 * + 4 2 / - 6 20 * 7 / + 3 - 9 - ");
 
-        test.interfijaAPostfija();
+            test.construirArbol();
 
-        try {
+
             test.prefija();
             test.postfija();
             test.interfija();
@@ -18,9 +18,7 @@ public class InterAposPrueba {
 
             System.out.println(test.evaluarExpresion());
 
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
 
     }
 }
