@@ -1,9 +1,13 @@
 
 package unam.fes.aragon.tercerparcial.problemados;
 
+import unam.fes.aragon.tercerparcial.problemauno.ArbolBinarioArreglo;
+
 public class InterAposPrueba {
     public static void main(String[] args) {
         InterfijaAPostfija test = new InterfijaAPostfija("10 5 8 * + 4 2 / - 6 20 * 7 / + 3 - 9 - ");
+        ArbolBinarioArreglo<Integer> testArbol =new ArbolBinarioArreglo<>();
+
 
             test.construirArbol();
 

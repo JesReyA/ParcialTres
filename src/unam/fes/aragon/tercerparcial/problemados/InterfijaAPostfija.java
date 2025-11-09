@@ -73,7 +73,7 @@ public class InterfijaAPostfija {
     }
 
     public void imprimirArbol() {
-        NodoCaracteres<String> n = nodos.extraer();
+        NodoCaracteres<String> n = nodos.elementoSuperior();
         Cola<NodoCaracteres<String>> cola = new Cola<>();
         if (n != null) {
             cola.insertar(n);

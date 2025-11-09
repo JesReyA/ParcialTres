@@ -27,6 +27,6 @@ public class ArbolArchivo {
             throw new RuntimeException(e.getMessage());
         }
 
-        arbolCreado.imprimir();
+        arbolCreado.recorridoAmplitudEnLista();
     }
 }
